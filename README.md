@@ -7,7 +7,7 @@ Building a Github User Tool with ReactJS
 
 ### Links
 
-https://protein-store.netlify.app
+https://makmao-github.netlify.app/
 
 ### Screenshots
 
