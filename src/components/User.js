@@ -13,12 +13,10 @@ const User = () => {
 
   const allBtns = ['repos', 'followers', 'following']
 
-
   return (
     <Wrapper>
       {error.show && (
-        <p className='error'>The person you are looking does not exist <br/>
-        Please try a different name</p>
+        <p className='error'>{error.msg}</p>
       )}
       <div className="img-container">
         <img src={avatar_url} alt="Person's avatar" className='avatar' />
@@ -38,11 +36,11 @@ const User = () => {
         )}
         <div className="info">
           <GroupsIcon className='icon'/>
-          <p>{followers}</p>
+          <p>{followers.toLocaleString()}</p>
         </div>
         <div className="info">
           <FavoriteIcon className='icon'/>
-          <p>{following}</p>
+          <p>{following.toLocaleString()}</p>
         </div>
       </div>
       <div className="btn-container">
@@ -65,19 +63,23 @@ const Wrapper = styled.div`
   .error {
     text-align: center;
     margin-top: -2em;
+    margin-bottom: 1em;
+    color: red
   }
 
-  .img-container {
+ .img-container {
     display: flex;
     justify-content: center;
-  }
+  } 
 
   .avatar {
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-    border: 4px solid var(--light-gray);
-    border-radius: 50%; 
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    border: 0;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 4px var(--light-dark);
   }
 
   .bio {

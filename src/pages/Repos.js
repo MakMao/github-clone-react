@@ -1,7 +1,6 @@
 import React from 'react'
 import { useGlobalContext } from '../context'
 import styled from 'styled-components'
-import { Link} from "react-router-dom";
 import WorkIcon from '@mui/icons-material/Work';
 import CodeIcon from '@mui/icons-material/Code';
 import StarIcon from '@mui/icons-material/Star';
@@ -10,7 +9,9 @@ import User from '../components/User';
 
 
 const Repos = () => {
-  const {repos} = useGlobalContext()
+  const {repos, setCategory} = useGlobalContext()
+
+  setCategory('repos')
   return (
     <Wrapper>
       <User/>
@@ -33,11 +34,11 @@ const Repos = () => {
               </div>
               <div className="individual-detail">
                 <StarIcon className='icon'/>
-                <p>{stars}</p>
+                <p>{stars.toLocaleString()}</p>
               </div>
               <div className="individual-detail">
                 <ForkLeftIcon className='icon'/>
-                <p>{forks}</p>
+                <p>{forks.toLocaleString()}</p>
               </div>
             </div>
         </div>
@@ -47,7 +48,6 @@ const Repos = () => {
         <h3 className='no-followers'>This person is not following anyone yet.</h3>
       )}
       </div>
-
     </Wrapper>
   )
 }

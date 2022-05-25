@@ -4,8 +4,8 @@ import User from '../components/User';
 
 const Following = () => {
 
-  const {following} = useGlobalContext()
-
+  const {following, setCategory} = useGlobalContext()
+  setCategory('following')
   return (
     <>
       <User/>

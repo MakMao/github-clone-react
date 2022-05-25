@@ -54,7 +54,7 @@ const AppProvider = ({children}) => {
       setLoading(false)
     }else{
       setLoading(false)
-      toggleError(true, 'there is no user with that username');
+      toggleError(true, 'There is no user with that username');
     }
   }
 

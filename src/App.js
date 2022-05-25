@@ -1,10 +1,8 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import styled from 'styled-components'
 import Navbar from "./components/Navbar";
 import Loading from "./components/Loading";
-import User from "./components/User";
-import Details from "./components/Details";
+import Error from "./pages/Error";
 import Followers from "./pages/Followers";
 import Following from "./pages/Following";
 import Repos from "./pages/Repos";
@@ -26,17 +24,14 @@ function App() {
   return (
     <Router>
         <Navbar/>
-        {/* <User/> */}
         <Routes>
+         <Route path="*" element={<Error/>}/>
           <Route path="/" element={<Repos/>}/>
-          <Route path="/followers" element={<Followers/>}/>
+          <Route path="/followers" element={<Followers/>}></Route>
           <Route path="/following" element={<Following/>}/>
         </Routes>
     </Router>
   );
 }
-
-const Wrapper = styled.div`
-`
 
 export default App;

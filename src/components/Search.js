@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Search = () => {
   const [user, setUser] = useState('')
-  const {searchGithubUser, error, setError} = useGlobalContext()
+  const {searchGithubUser} = useGlobalContext()
 
   const handleSubmit= (e) => {
     e.preventDefault()

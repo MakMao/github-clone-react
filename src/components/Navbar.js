@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Login from './Login'
 import Search from './Search'
 
 const Navbar = () => {
@@ -41,7 +40,6 @@ const Wrapper = styled.nav`
     display: flex;
     border-radius: var(--radius);
     border: 2px solid white;
-    /* box-shadow: 0 0 2px 2px var(--offset-white) ;  */
     width: fit-content;
     justify-content: center;
   }
